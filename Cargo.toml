@@ -15,7 +15,13 @@ ui      = { git = "https://github.com/Far-Beyond-Pulsar/WGPUI-Component", rev = 
 pulsar_image_format = { git = "https://github.com/Far-Beyond-Pulsar/PIF-rs", rev = "c2cd8c4dfc49e12bebd76812308a7dda1f851452" }
 
 # Graphics
-wgpu = { git = "https://github.com/Far-Beyond-Pulsar/wgpu", rev = "fce5b80e8017304449124b12637ec324417e40c8", default-features = false, features = ["dx12", "vulkan", "wgsl", "metal"] }
+wgpu = { version = "30.0.0", default-features = false, features = [
+    "web",
+    "webgpu",
+    "dx12",
+    "vulkan",
+    "wgsl",
+] }
 
 # Image decoding (PNG brush masks) — version pinned to match existing lock file
 image = { version = "=0.25.10", default-features = false, features = ["png"] }

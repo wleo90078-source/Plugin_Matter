@@ -489,14 +489,14 @@ impl CanvasRenderer {
                 module:              &tile_shader,
                 entry_point:         Some("vs_main"),
                 compilation_options: wgpu::PipelineCompilationOptions::default(),
-                buffers: &[wgpu::VertexBufferLayout {
+                buffers: &[Some(wgpu::VertexBufferLayout {
                     array_stride: std::mem::size_of::<TileVertex>() as u64,
                     step_mode:    wgpu::VertexStepMode::Vertex,
                     attributes: &[
                         wgpu::VertexAttribute { offset: 0, shader_location: 0, format: wgpu::VertexFormat::Float32x2 },
                         wgpu::VertexAttribute { offset: 8, shader_location: 1, format: wgpu::VertexFormat::Float32x2 },
                     ],
-                }],
+                })],
             },
             primitive: wgpu::PrimitiveState {
                 topology:  wgpu::PrimitiveTopology::TriangleList,
