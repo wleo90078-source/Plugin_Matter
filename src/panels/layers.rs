@@ -146,7 +146,7 @@ fn render_layer_item(
             div()
                 .flex_1()
                 .text_sm()
-                .text_color(if is_active { theme.accent } else { theme.foreground })
+                .text_color(theme.foreground)
                 .font_weight(if is_active { FontWeight::SEMIBOLD } else { FontWeight::NORMAL })
                 .child(name)
         )
